@@ -1,0 +1,30 @@
+<main class="container">
+    <h1>Login Page</h1>
+    <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
+        <fieldset class="mb-3">
+            <label for="username" class="form-label">Username*</label>
+            <input type="text" 
+            ngModel
+            #username="ngModel"
+            name="username"
+            placeholder="What's your username" 
+            class="form-control"
+            minlength="3"
+            maxlength="30"
+            required />
+        </fieldset>
+        
+        <div id="usernameErrors"
+            class="alert alert-danger"
+            *ngIf="username.invalid && (username.touched || username.dirty)">
+            <div *ngIf="username.errors">
+                <p class="mb-0" *ngIf="username.errors['required']">Username is required</p>
+                <p class="mb-0" *ngIf="username.errors['minlength']">Username must be at least 3 characters</p>
+            </div>
+        </div>
+        <button 
+        [disabled]="loginForm.invalid"
+        type="submit" 
+        class="btn btn-warning">Login</button>
+    </form>
+</main>

@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  pokemonApi: "https://pokeapi.co/api/v2/pokemon/",
+  imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/",
+  userApi: "https://noroff-trivia-game-assignment.herokuapp.com/trainers/",
+  apiKey: "1cIsSzQWS0qwOSnNGUv2+A=="
 };
 
 /*
